@@ -1,2 +1,6 @@
 realesrgan_ncnn
 realesrgan_ncnn/
+dist-raw/
+dist-low/
+dist-hq/
+dist-intel/

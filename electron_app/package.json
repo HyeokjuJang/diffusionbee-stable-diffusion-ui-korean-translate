@@ -1,11 +1,16 @@
 {
-  "name": "DiffusionBee",
+  "name": "CONTACT82",
   "version": "1.5.1",
   "build_number": "0016",
   "website": "https://diffusionbee.com",
-  "description": "Diffusion Bee - Stable Diffusion App.",
+  "description": "CONTACT82 - Stable Diffusion App in Korean.",
   "is_dev": false,
   "private": true,
+  "overrides": {
+    "vue-cli-plugin-electron-builder": {
+      "electron-builder": "^23.3.3"
+    }
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "serve:ui": "vue-cli-service serve ./src/main_demoui.js",
@@ -20,6 +25,7 @@
   "main": "background.js",
   "dependencies": {
     "@codekraft-studio/vue-record": "^0.0.3",
+    "@fortawesome/fontawesome-svg-core": "^6.2.1",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/vue-fontawesome": "^2.0.6",
     "apexcharts": "^3.33.0",
@@ -51,8 +57,8 @@
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "babel-eslint": "^10.1.0",
-    "electron": "^13.0.0",
-    "electron-builder": "^23.3.3",
+    "electron": "^13.6.8",
+    "electron-builder": "^22.14.13",
     "electron-devtools-installer": "^3.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",

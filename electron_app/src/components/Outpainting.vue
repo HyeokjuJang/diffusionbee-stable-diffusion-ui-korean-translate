@@ -7,7 +7,7 @@
         style="float: right"
         @click="init_state"
       >
-        Reset
+        초기화
       </div>
       <div
         class="l_button"
@@ -15,7 +15,7 @@
         style="float: right"
         @click="save_image"
       >
-        Save Image
+        저장
       </div>
       <div
         v-if="undo_history.length > 0 && stable_diffusion.is_input_avail"
@@ -23,7 +23,7 @@
         style="float: right"
         @click="do_undo"
       >
-        Undo
+        되돌리기
       </div>
       <div
         class="l_button"
@@ -31,7 +31,7 @@
         style="float: right"
         @click="add_ext_img"
       >
-        Add Image
+        이미지 추가
       </div>
       <div
         class="l_button"
@@ -42,7 +42,7 @@
           freeze_last_resizable_img();
         "
       >
-        {{ is_eraser_enabled ? "Stop" : "Start" }} Erasing
+        {{ is_eraser_enabled ? "지우기 취소" : "한 획 지우기" }}
       </div>
     </div>
 
@@ -72,7 +72,7 @@
         style="float: right"
         @click="generate()"
       >
-        Generate
+        생성
       </div>
     </div>
     <span v-else-if="stable_diffusion.generated_by == 'outpainting'">
@@ -82,7 +82,7 @@
         style="float: right; float: right; margin-top: 20px"
         @click="stop_generation"
       >
-        Stopping ...
+        멈추는 중 ...
       </div>
       <div
         v-else
@@ -90,7 +90,7 @@
         style="float: right; float: right; margin-top: 20px"
         @click="stop_generation"
       >
-        Stop
+        중단
       </div>
     </span>
 
@@ -122,7 +122,7 @@
         margin-bottom: 0;
       "
     >
-      Please describe image you want to draw in the box.
+      상자 안에 그리고 싶은 이미지를 프롬프트에 설명 해주세요.
     </p>
   </div>
 </template>

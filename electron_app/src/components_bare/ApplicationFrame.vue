@@ -24,14 +24,14 @@
             </template>
 
             <b-dropdown-item-button @click="$emit('menu_item_click_help', {})"
-              >Help</b-dropdown-item-button
+              >도움말</b-dropdown-item-button
             >
             <b-dropdown-item-button
               @click="$emit('menu_item_click_discord', {})"
-              >Start Discord Chat</b-dropdown-item-button
+              >디스코드</b-dropdown-item-button
             >
             <b-dropdown-item-button @click="selectTab('logs')"
-              >Show Logs</b-dropdown-item-button
+              >로그 보기</b-dropdown-item-button
             >
 
             <b-dropdown-item-button
@@ -48,11 +48,11 @@
             >
 
             <b-dropdown-item-button @click="selectTab('settings')"
-              >Settings</b-dropdown-item-button
+              >설정</b-dropdown-item-button
             >
 
             <b-dropdown-item-button @click="$emit('menu_item_click_close', {})"
-              >Close</b-dropdown-item-button
+              >닫기</b-dropdown-item-button
             >
             <!-- #TODO set these menu items via python -->
           </b-dropdown>

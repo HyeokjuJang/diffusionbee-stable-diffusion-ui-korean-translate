@@ -30,10 +30,10 @@
           <span v-if="!elements_hidden.includes('inp_img_strength')">
             <div style="display: flex; flex-direction: column; width: 300px">
               <div class="options_title_box">
-                <span>Input Strength</span>
+                <span>입력 이미지 의존도</span>
                 <span class="options_desc"
-                  >How closely to stick to the input image. (lower numbers makes
-                  the AI do more change)</span
+                  >입력 이미지와 얼마나 비슷하게 그릴까요? (낮은 값일 수록 AI가
+                  더 많은 변화를 시도합니다.)</span
                 >
               </div>
               <input
@@ -59,10 +59,8 @@
           <span v-if="!elements_hidden.includes('num_imgs')">
             <div class="options_title">
               <div class="options_title_box" style="width: 205px">
-                <span>Number of images</span>
-                <span class="options_desc"
-                  >How many images are generated in total.</span
-                >
+                <span>생성할 이미지 수</span>
+                <span class="options_desc">총 몇장의 이미지를 생성할까요?</span>
               </div>
               <div class="options_input" style="width: 75px">
                 <svg
@@ -118,10 +116,10 @@
           <span v-if="!elements_hidden.includes('batch_size')">
             <div class="options_title">
               <div class="options_title_box" style="width: 205px">
-                <span>Batch size</span>
+                <span>배치 사이즈</span>
                 <span class="options_desc"
-                  >How many images are created at the sametime. (Leave at 1 if
-                  you have 16GB or less RAM)</span
+                  >한번에 몇장씩 만들까요? (램이 16기가보다 작다면 1로
+                  고정해주세요.)</span
                 >
               </div>
               <div class="options_input" style="width: 75px">
@@ -159,7 +157,7 @@
           <span v-if="!elements_hidden.includes('img_h')">
             <div class="options_title">
               <div class="options_title_box" style="width: 115px">
-                <span>Resolution</span>
+                <span>해상도</span>
               </div>
               <div style="display: inline-flex; gap: 22px">
                 <div
@@ -297,10 +295,11 @@
             <span v-if="!elements_hidden.includes('batch_size')">
               <div class="options_title">
                 <div class="options_title_box" style="width: 205px">
-                  <span>Steps</span>
+                  <span>스텝</span>
                   <span class="options_desc"
-                    >Iterations of the image (more steps means more detail &
-                    more processing time - best to start around 10)</span
+                    >이미지를 몇 스텝에 걸쳐서 그릴까요? (많은 스텝을 거칠수록
+                    디테일해지지만 더 많은 시간이 걸립니다. - 보통 10정도가
+                    적당합니다.)</span
                   >
                 </div>
                 <div class="options_input" style="width: 75px">
@@ -340,10 +339,10 @@
           <b-form-group inline label="" style="margin-bottom: 6px">
             <div style="display: flex; flex-direction: column; width: 300px">
               <div class="options_title_box">
-                <span>Guidance scale</span>
+                <span>AI 자유도</span>
                 <span class="options_desc"
-                  >How closely to follow your prompt (lower numbers give the AI
-                  more creativity)</span
+                  >당신의 프롬프트를 따라 얼마나 충실하게 그릴까요? (낮을수록
+                  AI가 창의적으로 생성합니다.)</span
                 >
               </div>
               <input
@@ -368,10 +367,11 @@
 
           <div class="options_title">
             <div class="options_title_box" style="width: 155px">
-              <span>Seed</span>
+              <span>시드</span>
               <span class="options_desc"
-                >Starting point for iterations (any random number will do; DB
-                will pick one if left blank)</span
+                >AI가 시작할 포인트입니다. 똑같은 프롬프트더라도 시드가 다르면
+                다른 느낌의 그림을 그립니다. (아무 값이나 상관없어요. 빈칸으로
+                놔둬도 됩니다.)</span
               >
             </div>
             <div class="options_input" style="width: 125px">
@@ -421,10 +421,10 @@
 
           <div class="options_title">
             <div class="options_title_box" style="width: 165px">
-              <span>Custom Model</span>
+              <span>커스텀 모델</span>
               <span class="options_desc"
-                >You can use a custom stable diffusion model. Open settings to
-                add a ckpt model.</span
+                >스테이블 디퓨전 커스텀 모델을 추가할 수 있습니다.(ckpt
+                모델)</span
               >
             </div>
             <div class="options_input" style="width: 115px">
@@ -481,10 +481,10 @@
 
           <div class="options_title">
             <div class="options_title_box" style="width: 205px">
-              <span>Negative Prompt</span>
+              <span>부정 프롬프트</span>
               <span class="options_desc"
-                >Negative prompt allows adding things to avoid in the
-                image,</span
+                >부정 프롬프트는 이미지에서 그리지 않았으면 하는
+                프롬프트입니다.</span
               >
             </div>
             <div class="options_input" style="width: 75px">
@@ -499,7 +499,7 @@
                     !options_model_values.is_negative_prompt_avail
                 "
               >
-                Enable
+                허용
               </div>
               <div
                 v-else
@@ -509,7 +509,7 @@
                     !options_model_values.is_negative_prompt_avail
                 "
               >
-                Disable
+                금지
               </div>
             </div>
           </div>

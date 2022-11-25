@@ -42,7 +42,7 @@
           </LoaderModal>
           <div class="bottom_float">
             <p>
-              Please make sure you have around 8GB of free space for the models.
+              AI 모델을 다운로드하기 위한 8기가 이상의 여유공간을 확보해주세요.
             </p>
           </div>
         </div>
@@ -66,7 +66,7 @@
           </LoaderModal>
           <div class="bottom_float">
             <p>
-              Please make sure you have around 8GB of free space for the models.
+              AI 모델을 다운로드하기 위한 8기가 이상의 여유공간을 확보해주세요.
             </p>
           </div>
         </div>
@@ -90,7 +90,7 @@
           </LoaderModal>
           <div class="bottom_float">
             <p>
-              Please make sure you have around 8GB of free space for the models.
+              AI 모델을 다운로드하기 위한 8기가 이상의 여유공간을 확보해주세요.
             </p>
           </div>
         </div>
@@ -114,7 +114,7 @@
           </LoaderModal>
           <div class="bottom_float">
             <p>
-              Please make sure you have around 8GB of free space for the models.
+              AI 모델을 다운로드하기 위한 8기가 이상의 여유공간을 확보해주세요.
             </p>
           </div>
         </div>
@@ -134,7 +134,7 @@
 
       <template v-slot:logs>
         <div class="animatable_content_box">
-          <p>Logs :</p>
+          <p>로그 :</p>
 
           <p>
             <span style="white-space: pre-line">{{ app_state.logs }}</span>

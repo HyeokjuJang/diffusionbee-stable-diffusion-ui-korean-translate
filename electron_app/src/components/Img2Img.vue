@@ -35,7 +35,7 @@
       >
         <center>
           <p style="margin-top: calc(50vh - 180px); opacity: 70%">
-            Click to add input image
+            이미지를 넣으려면 클릭해주세요.
           </p>
         </center>
       </div>
@@ -45,28 +45,28 @@
         class="l_button"
         @click="open_input_image"
       >
-        Change Image
+        이미지 변경
       </div>
       <div
         v-if="inp_img && stable_diffusion.is_input_avail"
         class="l_button"
         @click="inp_img = ''"
       >
-        Clear
+        초기화
       </div>
       <div
         v-if="inp_img && stable_diffusion.is_input_avail && !is_inpaint"
         class="l_button"
         @click="is_inpaint = !is_inpaint"
       >
-        Draw Mask
+        마스킹하기
       </div>
       <div
         v-if="inp_img && stable_diffusion.is_input_avail && is_inpaint"
         class="l_button"
         @click="is_inpaint = !is_inpaint"
       >
-        Remove Mask
+        마스킹 지우기
       </div>
 
       <br />
@@ -108,7 +108,7 @@
           style="float: right"
           @click="generate_img2img"
         >
-          Generate
+          생성
         </div>
         <SDOptionsDropdown
           :options_model_values="this_object"
@@ -127,7 +127,7 @@
           style="float: right"
           @click="stop_generation"
         >
-          Stopping ...
+          멈추는 중 ...
         </div>
         <div
           v-else
@@ -135,12 +135,12 @@
           style="float: right"
           @click="stop_generation"
         >
-          Stop
+          중단
         </div>
       </div>
       <br /><br />
       <p style="opacity: 0.5; zoom: 0.8">
-        Please describe the complete image which you want to see as the output.
+        그리고 싶은 전체 이미지를 프롬프트에 설명해주세요.
       </p>
     </div>
 

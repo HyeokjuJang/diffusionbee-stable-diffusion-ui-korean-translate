@@ -7,7 +7,7 @@
         style="float: right"
         @click="clear"
       >
-        Reset
+        초기화
       </div>
       <div
         v-if="undo_history.length > 0 && stable_diffusion.is_input_avail"
@@ -15,7 +15,7 @@
         style="float: right"
         @click="do_undo"
       >
-        Undo
+        되돌리기
       </div>
       <div
         v-if="inp_img"
@@ -23,7 +23,7 @@
         style="float: right"
         @click="save_img"
       >
-        Save Image
+        저장
       </div>
       <div
         v-if="retry_params && stable_diffusion.is_input_avail"
@@ -31,7 +31,7 @@
         style="float: right"
         @click="generate(true)"
       >
-        Retry
+        재시도
       </div>
 
       <div
@@ -51,7 +51,7 @@
         class="l_button no_hover_bg"
         style="float: right; margin-right: -5px"
       >
-        Stroke Size
+        선 굵기
       </div>
     </div>
 
@@ -82,7 +82,7 @@
               opacity: 70%;
             "
           >
-            Click to add input image and draw a mask
+            클릭해서 이미지를 추가하고 다시 그리고 싶은 부분을 마스킹 해주세요.
           </p>
         </center>
       </div>
@@ -108,7 +108,7 @@
         class="l_button button_medium button_colored"
         style="float: right; margin-top: 4px"
       >
-        Inpaint
+        인페인팅
       </div>
       <span v-else-if="stable_diffusion.generated_by == 'inpainting'">
         <div
@@ -117,7 +117,7 @@
           style="float: right; margin-top: 4px"
           @click="stop_generation"
         >
-          Stopping
+          멈추는 중...
         </div>
         <div
           v-else
@@ -125,7 +125,7 @@
           style="float: right; margin-top: 4px"
           @click="stop_generation"
         >
-          Stop
+          중단
         </div>
       </span>
     </div>

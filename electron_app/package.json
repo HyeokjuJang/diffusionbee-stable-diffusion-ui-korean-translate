@@ -1,9 +1,9 @@
 {
-  "name": "CONTACT82",
+  "name": "CONTACT.AI",
   "version": "1.5.1",
   "build_number": "0016",
   "website": "https://diffusionbee.com",
-  "description": "CONTACT82 - Stable Diffusion App in Korean.",
+  "description": "CONTACT.AI - Stable Diffusion App in Korean.",
   "is_dev": false,
   "private": true,
   "overrides": {

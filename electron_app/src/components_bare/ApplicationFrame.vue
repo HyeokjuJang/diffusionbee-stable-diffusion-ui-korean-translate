@@ -24,11 +24,11 @@
             </template>
 
             <b-dropdown-item-button @click="$emit('menu_item_click_help', {})"
-              >도움말</b-dropdown-item-button
+              >Original DiffusionBee</b-dropdown-item-button
             >
             <b-dropdown-item-button
               @click="$emit('menu_item_click_discord', {})"
-              >디스코드</b-dropdown-item-button
+              >DiffusionBee Discord</b-dropdown-item-button
             >
             <b-dropdown-item-button @click="selectTab('logs')"
               >로그 보기</b-dropdown-item-button

@@ -1,11 +1,11 @@
 # Diffusion Bee - Stable Diffusion GUI App for MacOS
-[![Twitter](https://img.shields.io/twitter/url.svg?label=Follow%20%40divamgupta&style=social&url=https%3A%2F%2Ftwitter.com%2Fdivamgupta)](https://twitter.com/divamgupta)
 
+[![Twitter](https://img.shields.io/twitter/url.svg?label=Follow%20%40divamgupta&style=social&url=https%3A%2F%2Ftwitter.com%2Fdivamgupta)](https://twitter.com/divamgupta)
 
 ### Diffusion Bee is the easiest way to run Stable Diffusion locally on your Intel / M1 Mac. Comes with a one-click installer. No dependencies or technical knowledge needed.
 
-* Runs locally on your computer no data is sent to the cloud ( other than request to download the weights or unless you chose to upload an image ).
-*  *If you like Diffusion Bee, consider checking https://Liner.ai , a one-click tool to train machine learning models*
+- Runs locally on your computer no data is sent to the cloud ( other than request to download the weights or unless you chose to upload an image ).
+- _If you like Diffusion Bee, consider checking https://Liner.ai , a one-click tool to train machine learning models_
 
 <br>
 
@@ -13,50 +13,44 @@
 
 Download at https://diffusionbee.com/
 
-
 <br>
 
 For prompt ideas visit https://arthub.ai
 
 Join discord server : https://discord.gg/t6rC5RaJQn
 
-
 ## Features
-* Full data privacy - nothing is sent to the cloud ( unless you chose to upload an image )
-* Clean and easy to use UI with one-click installer
-* Image to image
-* In-painting
-* Out-painting
-* Generation history
-* Upscaling images
-* Multiple image sizes
-* Optimized for M1/M2 Chips
-* Runs locally on your computer
-* Negative prompts
-* Advanced prompt options
 
+- Full data privacy - nothing is sent to the cloud ( unless you chose to upload an image )
+- Clean and easy to use UI with one-click installer
+- Image to image
+- In-painting
+- Out-painting
+- Generation history
+- Upscaling images
+- Multiple image sizes
+- Optimized for M1/M2 Chips
+- Runs locally on your computer
+- Negative prompts
+- Advanced prompt options
 
+## How to use
 
-## How to use 
-
-1) Download and start the application
+1. Download and start the application
 
 ![image](https://user-images.githubusercontent.com/1890549/198916443-c6a2e40a-3d1e-4000-882d-993aa1941391.png)
 
-
-2) Enter a prompt and click generate
+2. Enter a prompt and click generate
 
 Text to image:
 
 ![image](https://user-images.githubusercontent.com/1890549/198916929-fc3c2570-b8d6-4d24-847a-1906b8e57797.png)
-
 
 Image to image:
 
 ![image](https://user-images.githubusercontent.com/1890549/198915127-6ff3fcd5-5226-40fc-a431-df2ef279cce7.png)
 
 ![image](https://user-images.githubusercontent.com/1890549/198915243-4af83111-2dd5-4624-bfc9-f11b9863c32a.png)
-
 
 Image to image with mask:
 
@@ -79,17 +73,22 @@ History:
 
 ![image](https://user-images.githubusercontent.com/1890549/198916678-9061829c-69da-4eee-b28d-1989e01c11e0.png)
 
+## Requirements
 
-
-
-## Requirements 
-* Mac with Intel or M1/M2 CPU
-* MacOS 12.3.1 or later
+- Mac with Intel or M1/M2 CPU
+- MacOS 12.3.1 or later
 
 License : Stable Diffusion is released under the CreativeML OpenRAIL M license : https://github.com/CompVis/stable-diffusion/blob/main/LICENSE
-Diffusion Bee is just a GUI wrapper on top of Stable Diffusion, so all the term of Stable Diffusion are applied on the outputs. 
+Diffusion Bee is just a GUI wrapper on top of Stable Diffusion, so all the term of Stable Diffusion are applied on the outputs.
 
 References
-1) https://github.com/CompVis/stable-diffusion
-2) https://github.com/madebyollin/maple-diffusion
-3) https://github.com/divamgupta/stable-diffusion-tensorflow
+
+1. https://github.com/CompVis/stable-diffusion
+2. https://github.com/madebyollin/maple-diffusion
+3. https://github.com/divamgupta/stable-diffusion-tensorflow
+
+## WHEN BUILD
+
+export BACKEND_BUILD_PATH=../backends/stable_diffusion_tf/dist/diffusionbee_backend
+export BUILD_ARCH="arm64" or "x64"  
+search GOOGLE_API_KEY and set it.

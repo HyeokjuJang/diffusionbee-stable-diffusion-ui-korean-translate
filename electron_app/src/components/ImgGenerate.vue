@@ -210,6 +210,33 @@ import ImageItem from "../components/ImageItem.vue";
 import { share_on_arthub } from "../utils.js";
 import SDOptionsDropdown from "../components_bare/SDOptionsDropdown.vue";
 
+const GOOGLE_API_KEY = "SETTHISVALUE";
+const ART_PROMPT = [
+  "anthony jones, Loish, painterly style by Gerald parel, craig mullins, marc simonetti, mike mignola, flat colors illustration, bright and colorful, high contrast, Mythology, cinematic, detailed, atmospheric, epic , concept art, Matte painting, Lord of the rings, Game of Thrones, shafts of lighting, mist, , photorealistic, concept art, volumetric light, cinematic epic + rule of thirds | 35mm| octane render, 8k, corona render, movie concept art, octane render, 8k, corona render, cinematic, trending on artstation, movie concept art, cinematic composition , ultra detailed, realistic , hiperealistic , volumetric lighting , 8k",
+  "cinematic, raining, night time, detailed, epic , concept art, Matte painting, shafts of lighting, mist, photorealistic, concept art, volumetric light, cinematic epic + rule of thirds, movie concept art, 8k, cinematic, trending on artstation, movie concept art, cinematic composition , ultra detailed, realistic , hyper realistic , volumetric lighting , 8k",
+  "rendered in octane, in the style of Luc Schuiten, craig mullins, solarpunk in deviantart, photorealistic, highly detailed, Vincent Callebaut, elena of avalor, highly detailed",
+  "d & d concept art, d & d wallpaper, warm, digital art. art by james gurney and larry elmore",
+  "Greg Rutkowski, Zabrocki, Karlkka, Jayison Devadas, Phuoc Quan, trending on Artstation, 8K, ultra wide angle, pincushion lens effect.",
+  "Moebius, Greg Rutkowski, Zabrocki, Karlkka, Jayison Devadas, Phuoc Quan, trending on Artstation, 8K, ultra wide angle, pincushion lens effect.",
+  "beautiful bright colors, hypermaximalist, futuristic, cyberpunk setting, luxury, elite, cinematic, techwear fashion, Errolson Hugh, Sacai, Nike ACG, Yohji Yamamoto, Y3, ACRNYM, matte painting",
+  "in the style of artgerm, and wlop, chanel jewelry, cinematic lighting, hyperdetailed, 8 k realistic, symmetrical, global illumination, radiant light, love and mercy, frostbite 3 engine, cryengine, dof, trending on artstation, digital art, crepuscular ray",
+  "disney infinity 3 star wars style, volumetric lighting, subsurface scattering, photorealistic, octane render, medium shot, studio ghibli, pixar and disney animation, sharp, rendered in unreal engine 5, anime key art by greg rutkowski and josh black, bloom, dramatic lighting",
+  "medium shot, studio ghibli, pixar and disney animation, sharp, rendered in unreal engine 5, anime key art by greg rutkowski, bloom, dramatic lighting",
+  "digital portrait, concept art, illustration, natural soft rim light, anatomical, facial muscles, elegant, regal, hyper realistic, ultra detailed, 0 6 0 8 wear techwear clothing, octane render, darriel diano style, volumetric lighting, 8 k post – production, artstation hq, unreal engine 5, unity engine",
+  "highly saturated colors, fantasy character, detailed illustration, hd, 4k, digital art, overdetailed art, concept art, Dan Mumford, Krzysztof Maziarz, trending on artstation",
+  "beautiful painting, detailed illustration, digital art, overdetailed art, concept art, full character, character concept, long hair, full body shot, highly saturated colors, fantasy character, detailed illustration, hd, 4k, digital art, overdetailed art, concept art, Dan Mumford, Greg rutkowski, Victo Ngai",
+  "16K resolution, Landscape veduta photo by Dustin Lefevre & tdraw, 8k resolution, detailed landscape painting by Ivan Shishkin, DeviantArt, Flickr, rendered in Enscape, Miyazaki, Nausicaa Ghibli, Breath of The Wild, 4k detailed post processing, atmospheric, hyper realistic, 8k, epic composition, cinematic, artstation",
+  "ultra wide shot, atmospheric, hyper realistic, 8k, epic composition, cinematic, octane render, artstation landscape vista photography by Carr Clifton & Galen Rowell, 16K resolution, Landscape veduta photo by Dustin Lefevre & tdraw, 8k resolution, detailed landscape painting by Ivan Shishkin, DeviantArt, Flickr, rendered in Enscape, Miyazaki, Nausicaa Ghibli, Breath of The Wild, 4k detailed post processing, artstation, rendering by octane, unreal",
+  "hyper realistic, 8k, epic composition, cinematic, octane render, artstation landscape vista photography by Carr Clifton & Galen Rowell, 16K resolution, Landscape veduta photo by Dustin Lefevre & tdraw, 8k resolution, detailed landscape painting by Ivan Shishkin, DeviantArt, Flickr, rendered in Enscape, Miyazaki, Nausicaa Ghibli, Breath of The Wild, 4k detailed post processing, artstation, rendering by octane, unreal engine",
+  "stranded alone and roaming in the chaos across a depressing abandoned post – apocalyptic landscape, post – apocalyptic corrupted themes, artstation trending, beautiful art landscape, detailed simon stalenhag landscape",
+  "atmospheric, hyper realistic, epic composition, cinematic, landscape vista photography by Carr Clifton & Galen Rowell, 16K resolution, Landscape veduta photo by Dustin Lefevre & tdraw, detailed landscape painting by Ivan Shishkin, DeviantArt, Flickr, rendered in Enscape, Miyazaki, Nausicaa Ghibli, Breath of The Wild, 4k detailed post processing, artstation, unreal engine",
+  "atmospheric, hyper realistic, 8k, epic composition, cinematic, octane render, artstation landscape vista photography by Carr Clifton & Galen Rowell, 16K resolution, Landscape veduta photo by Dustin Lefevre & tdraw, 8k resolution, detailed landscape painting by Ivan Shishkin, DeviantArt, Flickr, rendered in Enscape, Miyazaki, Nausicaa Ghibli, Breath of The Wild, 4k detailed post processing, artstation, rendering by octane, unreal engine",
+  "art station, landscape, concept art, illustration, highly detailed artwork cinematic, hyper realistic painting",
+  "3d with depth of field, blurred background. female. nautilus. A highly detailed epic cinematic concept art CG render. made in Blender and Photoshop, octane render, excellent composition, cinematic dystopian brutalist atmosphere. dynamic lighting. dramatic lighting. cinematic lighting. aesthetic. stylized. very inspirational. detailed. hq. realistic. warm light. vibrant color scheme. highly detailed. muted colors. Moody. Filmic.",
+  "ctane render, 8 k, exploration, cinematic, trending on artstation, by beeple, realistic, 3 5 mm camera, unreal engine, hyper detailed, photo – realistic maximum detai, volumetric light, moody cinematic epic concept art, realistic matte painting, hyper photorealistic, concept art, volumetric light, cinematic epic, octane render, 8 k, corona render, movie concept art, octane render, 8 k, corona render, cinematic, trending on artstation, movie concept art, cinematic composition, ultra – detailed, realistic, hyper – realistic, volumetric lighting, 8 k",
+  "WLOP, Stanley Artgerm Lau, Ruan Jia and Fenghua Zhong, trending on ArtStation, subtle muted cinematic colors, made in Maya, Blender and Photoshop, octane render, excellent composition, cinematic atmosphere, dynamic dramatic cinematic lighting, precise correct anatomy, aesthetic, very inspirational, arthouse",
+];
+
 export default {
   name: "ImgGenerate",
   props: {
@@ -220,7 +247,7 @@ export default {
   mounted() {},
   data() {
     return {
-      img_w: 512,
+      img_w: 768,
       img_h: 512,
       dif_steps: 25,
       guidence_scale: 7.5,
@@ -235,6 +262,8 @@ export default {
       is_stopping: false,
       modifiers: require("../modifiers.json"),
       is_negative_prompt_avail: false,
+      is_random_art_style_avail: true,
+      is_translation_avail: true,
       negative_prompt: "",
       selected_model: "Default",
     };
@@ -245,7 +274,7 @@ export default {
     },
   },
   methods: {
-    generate_from_prompt() {
+    async generate_from_prompt() {
       let seed = 0;
       if (this.seed) seed = Number(this.seed);
       else seed = Math.floor(Math.random() * 100000);
@@ -273,8 +302,24 @@ export default {
           this.app_state.app_data.custom_models[this.selected_model].path;
       }
 
-      if (this.is_negative_prompt_avail)
+      if (this.is_negative_prompt_avail) {
         params["negative_prompt"] = this.negative_prompt;
+      }
+
+      if (this.is_translation_avail) {
+        this.translated_prompt = await this.translate(this.prompt);
+        this.translated_negative_prompt = await this.translate(
+          this.negative_prompt
+        );
+        params["prompt"] = this.translated_prompt;
+        params["negative_prompt"] = this.translated_negative_prompt;
+      }
+
+      if (this.is_random_art_style_avail) {
+        this.selected_art_prompt =
+          ART_PROMPT[Math.floor(Math.random() * ART_PROMPT.length)];
+        params["prompt"] += ", " + this.selected_art_prompt;
+      }
 
       let that = this;
 
@@ -308,6 +353,13 @@ export default {
               p["model_version"] = that.stable_diffusion.model_version;
             if (that.is_negative_prompt_avail)
               p["negative_prompt"] = that.negative_prompt;
+            if (this.is_translation_avail) {
+              p["prompt"] = that.translated_prompt;
+              p["negative_prompt"] = that.translated_negative_prompt;
+            }
+            if (that.is_random_art_style_avail) {
+              p["prompt"] += ", " + that.selected_art_prompt;
+            }
             Vue.set(that.app_state.app_data.history, history_key, p);
           }
 
@@ -364,6 +416,39 @@ export default {
           alert("Error in uploading.");
           that.app_state.global_loader_modal_msg = "";
         });
+    },
+    translate(prompt) {
+      let translated_prompt = "";
+      let url =
+        "https://translation.googleapis.com/language/translate/v2?key=" +
+        GOOGLE_API_KEY;
+      let body = {
+        q: prompt,
+        source: "ko",
+        target: "en",
+        format: "text",
+      };
+      let options = {
+        method: "POST",
+        body: JSON.stringify(body),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+      // generate fetch promise
+      return new Promise((resolve, reject) => {
+        fetch(url, options)
+          .then((response) => response.json())
+          .then((data) => {
+            translated_prompt = data.data.translations[0].translatedText;
+            console.log(translated_prompt);
+            resolve(translated_prompt);
+          })
+          .catch((err) => {
+            console.log(err);
+            reject(prompt);
+          });
+      });
     },
   },
 };

@@ -513,6 +513,62 @@
               </div>
             </div>
           </div>
+          <div class="options_title">
+            <div class="options_title_box" style="width: 205px">
+              <span>랜덤 아트 스타일</span>
+              <span class="options_desc">랜덤으로 스타일을 적용합니다.</span>
+            </div>
+            <div class="options_input" style="width: 75px">
+              <div
+                v-if="!options_model_values.is_random_art_style_avail"
+                class="l_button"
+                @click="
+                  options_model_values.is_random_art_style_avail =
+                    !options_model_values.is_random_art_style_avail
+                "
+              >
+                허용
+              </div>
+              <div
+                v-else
+                class="l_button"
+                @click="
+                  options_model_values.is_random_art_style_avail =
+                    !options_model_values.is_random_art_style_avail
+                "
+              >
+                금지
+              </div>
+            </div>
+          </div>
+          <div class="options_title">
+            <div class="options_title_box" style="width: 205px">
+              <span>자동 번역</span>
+              <span class="options_desc">프롬프트를 영어로 번역합니다.</span>
+            </div>
+            <div class="options_input" style="width: 75px">
+              <div
+                v-if="!options_model_values.is_translation_avail"
+                class="l_button"
+                @click="
+                  options_model_values.is_translation_avail =
+                    !options_model_values.is_translation_avail
+                "
+              >
+                허용
+              </div>
+              <div
+                v-else
+                class="l_button"
+                @click="
+                  options_model_values.is_translation_avail =
+                    !options_model_values.is_translation_avail
+                "
+              >
+                금지
+              </div>
+            </div>
+          </div>
         </div>
         <br />
       </b-dropdown-form>

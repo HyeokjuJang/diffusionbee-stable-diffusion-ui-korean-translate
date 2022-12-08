@@ -13,7 +13,7 @@
     <ApplicationFrame
       ref="app_frame"
       v-else
-      title="CONTACT82 - Stable Diffusion App in Korean"
+      title="CONTACT.AI - Stable Diffusion App in Korean"
       @menu_item_click_about="show_about"
       @menu_item_click_help="open_url('https://diffusionbee.com/')"
       @menu_item_click_close="close_window"
